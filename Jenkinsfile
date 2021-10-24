@@ -16,6 +16,7 @@ pipeline {
 	post {
 		success {
 			dependencyCheckPublisher pattern: 'dependency-check-report.xml'
+			dependencyCheckPublisher pattern: 'dependency-check-report.html'
 		}
 	}
 }
