@@ -10,13 +10,12 @@ pipeline {
             steps {
                 echo 'Building..'
             }
+        }    
         stage('OWASP DependencyCheck') {
 			steps {
 				dependencyCheck additionalArguments: '--format HTML --format XML --suppression suppression.xml', odcInstallation: 'Default'
 			}
 		}
-
-        }
         stage('Test') {
             steps {
                 echo 'Testing..'
